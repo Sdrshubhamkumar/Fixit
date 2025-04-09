@@ -1,4 +1,13 @@
 import React from 'react';
+import shubhamElectronicsImg from '../assets/shubham-electronics.webp';
+import dheerajShopImg from '../assets/dheeraj-shop.avif';
+import acRepairImg from '../assets/ac-repair.jpg';
+import washingMachineImg from '../assets/washing-machine.webp';
+import coolerRepairImg from '../assets/cooler-repair.jpg';
+import refrigeratorRepairImg from '../assets/refrigerator-repair.jpg';
+import ovenRepairImg from '../assets/oven-repair.avif';
+import geyserRepairImg from '../assets/geyser-repair.jpg';
+
 
 const ElectricalRepair = () => {
 return (
@@ -18,13 +27,13 @@ return (
                         name: "Shubham Electronics",
                         address: "Shop No. 1, Near SBI Bank, Kalyanpur, Kanpur",
                         phone: "0987654321",
-                        img: "assest/shubham-electronics.webp",
+                        img: shubhamElectronicsImg,
                     },
                     ...Array(4).fill({
                         name: "Dheeraj Electronics",
                         address: "Shop No. 2, Near SBI Bank, Kalyanpur, Kanpur",
                         phone: "0987654321",
-                        img: "assest/dheeraj-shop.avif",
+                        img:  dheerajShopImg,
                     }),
                 ].map((shop, index) => (
                     <li
@@ -57,33 +66,33 @@ return (
                     {
                         title: "AC services",
                         shop: "Shubham Electronics",
-                        img: "assest/ac-repair.jpg",
+                        img: acRepairImg ,
                         link: "/requestform",
                     },
                     {
                         title: "Washing machine",
                         shop: "Shubham Electronics",
-                        img: "assest/washing-machine.webp",
+                        img: washingMachineImg,
                     },
                     {
                         title: "Cooler",
                         shop: "Dheeraj Electronics",
-                        img: "assest/cooler-repair.jpg",
+                        img: coolerRepairImg,
                     },
                     {
                         title: "Refrigerator",
                         shop: "Dheeraj Electronics",
-                        img: "assest/refrigerator-repair.jpg",
+                        img: refrigeratorRepairImg,
                     },
                     {
                         title: "Oven",
                         shop: "Dheeraj Electronics",
-                        img: "assest/oven-repair.avif",
+                        img: ovenRepairImg,
                     },
                     {
                         title: "Geyser",
                         shop: "Shubham Electronics",
-                        img: "assest/geyser-repair.jpg",
+                        img: geyserRepairImg,
                     },
                 ].map((service, index) => (
                     <div
@@ -110,37 +119,7 @@ return (
             </div>
         </div>
 
-        <footer className="bg-gray-200 mt-10 py-6">
-            <h1 className="text-2xl font-bold text-center mb-4">FIXIT</h1>
-            <div className="flex flex-wrap justify-around px-4 text-sm">
-                <div className="space-y-2">
-                    <h3 className="font-semibold">Company</h3>
-                    <div className="space-x-1">
-                        <a href="#">About Us |</a>
-                        <a href="#">Terms & Conditions |</a>
-                        <a href="#">Privacy Policy |</a>
-                        <a href="#">Careers</a>
-                    </div>
-                </div>
-                <div className="space-y-2">
-                    <h3 className="font-semibold">For Customers</h3>
-                    <div className="space-x-1">
-                        <a href="#">Blog |</a>
-                        <a href="#">Reviews |</a>
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div>
-                <div className="space-y-2">
-                    <h3 className="font-semibold">Social Links</h3>
-                    <div className="flex space-x-3">
-                        <a href="#"><i className="fab fa-youtube text-black text-xl" /></a>
-                        <a href="#"><i className="fab fa-instagram text-black text-lg" /></a>
-                        <a href="#"><i className="fab fa-x-twitter text-black text-lg" /></a>
-                        <a href="#"><i className="fab fa-facebook-square text-black text-lg" /></a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+       
     </section>
 );
 };

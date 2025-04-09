@@ -1,58 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import img1 from "../assets/img1.avif";
 import img2 from "../assets/img2.avif";
 import img3 from "../assets/img3.jpg";
 import img4 from "../assets/img4.jpg";
 import Cleaning from "../assets/cleaning.jpg";
 import Repair from "../assets/repair.webp";
+import { Link } from "react-router-dom";
 
 export default function FixitHomePage() {
     return (
-        <div className="bg-blue-100 flex flex-col">
-            <header className="bg-indigo-200 flex items-center justify-around px-4 fixed top-0 w-full z-10">
-                <h1 className="text-xl font-bold">FIXIT</h1>
-                <button className="bg-white px-4 py-1 rounded-md shadow">
-                    <Link to="login">Login or signup</Link>
-                </button>
-            </header>
+        <div className="relative  flex flex-col">
 
-            <nav className="pt-20 flex items-center justify-around">
-                <div className="w-1/2 flex items-center">
-                    <input
-                        className="px-4 h-9 rounded-full border border-blue-400 bg-white"
-                        id="searchBar"
-                        type="search"
-                        placeholder="Search Your Destination !!"
-                    />
-                    <button onClick={() => searchDestination()} className="ml-2">
-                        <img
-                            className="h-6"
-                            src="https://purepng.com/public/uploads/large/search-icon-lob.png"
-                            alt="search"
-                        />
-                    </button>
-                </div>
-                <div className="hidden sm:block">
-                    <ul className="flex list-none justify-center">
-                        <li className="px-5">
-                            <a href="#Home" className="text-lg">Home</a>
-                        </li>
-                        <li className="px-5">
-                            <a href="#">Setting</a>
-                        </li>
-                        <li className="px-5">
-                            <a href="#box1">About Us</a>
-                        </li>
-                        <li className="px-5">
-                            <a href="#">Help</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            {/* ✅ Background Blur Image Layer */}
+            <div
+                className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
+                style={{ backgroundImage: `url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')` }}
+            ></div>
 
-            <section id="section1" className="flex flex-wrap justify-between p-4 bg-fixed bg-no-repeat" style={{ backgroundImage: `url('/img/home.jpg')` }}>
-                <div id="box1" className="p-4">
+            {/* Section: About Us & Image Grid */}
+            <section id="section1" className="flex flex-wrap justify-between p-4">
+                <div id="box1" className="p-4 rounded-xl shadow-lg">
                     <h1 className="text-2xl font-bold">About Us</h1>
                     <p className="mt-2">
                         Welcome to <b>FIXIT</b>, your trusted partner for reliable and high-quality home services. We are dedicated to making home maintenance and improvement effortless by connecting you with skilled professionals for a wide range of services.
@@ -66,7 +33,7 @@ export default function FixitHomePage() {
                         <li>✔ Quick and efficient service</li>
                     </ul>
                 </div>
-                <div id="box2" className="grid gap-2 grid-cols-2 md:grid-cols-3">
+                <div id="box2" className="grid gap-2 grid-cols-2 md:grid-cols-3 bg-white/70 rounded-xl shadow-lg p-2">
                     <img src={img1} alt="Fix" className="w-full h-auto" />
                     <img src={img2} alt="Plumbing" className="w-full h-auto" />
                     <img src={img3} alt="Lock Repair" className="w-full h-auto" />
@@ -76,12 +43,13 @@ export default function FixitHomePage() {
                 </div>
             </section>
 
+            {/* Section: Our Services */}
             <h1 className="text-2xl text-center font-bold my-4">Our Services</h1>
             <div className="flex flex-wrap justify-around bg-cover bg-fixed" style={{ backgroundImage: `url('/img/backImage.jpg')` }}>
                 {[
                     { img: Cleaning, title: "Cleaning", link: "clean.html" },
-                    { img: Repair, title: "Repairing", link: "/repair" }, // React route
-                    { img: img1, title: "Spa", link: "/spasalon" }, // Updated React route
+                    { img: Repair, title: "Repairing", link: "/repair" },
+                    { img: img1, title: "Spa", link: "/spasalon" },
                 ].map((service, index) => (
                     <div key={index} className="flex flex-col items-center p-4 m-4 bg-blue-200 rounded-lg shadow-lg transition-transform hover:scale-105">
                         <img src={service.img} alt={service.title} className="w-72 h-36 object-cover shadow-xl" />
@@ -99,6 +67,7 @@ export default function FixitHomePage() {
                 ))}
             </div>
 
+            {/* Section: Other Services */}
             <h1 className="text-2xl text-center font-bold my-4">OTHER Services</h1>
             <div className="flex flex-wrap justify-around bg-fixed bg-center bg-no-repeat bg-cover p-8" style={{ backgroundImage: `url('/img/room.jpg')` }}>
                 {[
@@ -112,34 +81,6 @@ export default function FixitHomePage() {
                     </div>
                 ))}
             </div>
-
-            <footer className="bg-gray-200 p-4 mt-4">
-                <h1 className="text-center text-xl font-bold">FIXIT</h1>
-                <div className="flex flex-wrap justify-around mt-4">
-                    <div>
-                        <h3 className="font-semibold">Company</h3>
-                        <a href="#" className="block">About Us | Terms & Conditions | Privacy policy | Careers</a>
-                    </div>
-                    <div>
-                        <h3 className="font-semibold">For Customers</h3>
-                        <a href="#" className="block">Blog | Reviews | Contact Us</a>
-                    </div>
-                    <div>
-                        <h3 className="font-semibold">Social Links</h3>
-                        <div className="flex gap-4">
-                            <a href="#"><i className="fab fa-youtube text-xl"></i></a>
-                            <a href="#"><i className="fab fa-instagram text-xl"></i></a>
-                            <a href="#"><i className="fab fa-x-twitter text-xl"></i></a>
-                            <a href="#"><i className="fab fa-facebook-square text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
-}
-
-function searchDestination() {
-    const value = document.getElementById("searchBar")?.value;
-    alert(`Searching for: ${value}`);
 }

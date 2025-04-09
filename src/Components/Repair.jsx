@@ -1,39 +1,46 @@
 import React from 'react';
+import electricalImage from '../assets/electrical-image.jpg';
+import plumberImg from '../assets/plumber-img.jpg';
+import furnitureImg from '../assets/furniture-img.jpg';
+import carImg from '../assets/car-img.avif';
+import electricImg from '../assets/electric-img.jpg';
+import roofImg from '../assets/roof-img.webp';
+import wallImg from '../assets/wall-img.webp';
 
 const services = [
   {
     title: "Electrical Appliance",
-    image: "assest/electrical-image.jpg",
+    image: electricalImage,
     description: "Repairing and maintaining electrical appliances for safe and efficient use.",
   },
   {
     title: "Plumber",
-    image: "assest/plumber-img.jpg",
+    image: plumberImg,
     description: "Expert in fixing leaks, installing pipes, and ensuring a smooth water supply.",
   },
   {
     title: "Furniture",
-    image: "assest/furniture-img.jpg",
+    image: furnitureImg,
     description: "Assembling, repairing, and restoring furniture for a comfortable living space.",
   },
   {
     title: "Vehicle",
-    image: "assest/car-img.avif",
+    image: carImg,
     description: "Servicing, repairing, and maintaining cars and bikes for smooth performance.",
   },
   {
     title: "Electrical Repairs",
-    image: "assest/electric-img.jpg",
+    image: electricImg,
     description: "Expert solutions for wiring, appliance repair, and electrical safety.",
   },
   {
     title: "Roof & Waterproofing",
-    image: "assest/roof-img.webp",
+    image: roofImg,
     description: "Protect your home with expert roofing and waterproofing solutions.",
   },
   {
     title: "Painting & Wall Repair",
-    image: "assest/wall-img.webp",
+    image: wallImg,
     description: "Enhance your home with professional painting and wall repair services.",
   },
 ];
