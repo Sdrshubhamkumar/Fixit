@@ -37,18 +37,38 @@ export default function Header() {
         </div>
 
         {/* Menu Items */}
-        <ul className="flex list-none justify-center space-x-5 text-base">
+        <ul className="flex list-none justify-center space-x-5 text-base relative">
           <li>
-            <a href="#Home" className="hover:underline">Home</a>
+            <Link to="/" className="hover:underline">Home</Link>
+          </li>
+          <li className="relative group">
+  <span className="hover:underline cursor-pointer">Services</span>
+  <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+    <ul className="py-2">
+      <li>
+        <Link to="/services/electric" className="block px-4 py-2 hover:bg-gray-100">Electric Service</Link>
+      </li>
+      <li>
+        <Link to="/repair" className="block px-4 py-2 hover:bg-gray-100">Electrical Services</Link>
+      </li>
+      <li>
+        <Link to="/services/plumber" className="block px-4 py-2 hover:bg-gray-100">Plumber Services</Link>
+      </li>
+      <li>
+        <Link to="/services/furniture" className="block px-4 py-2 hover:bg-gray-100">Furniture Services</Link>
+      </li>
+      <li>
+        <Link to="/spasalon" className="block px-4 py-2 hover:bg-gray-100">Spa & Salon</Link>
+      </li>
+    </ul>
+  </div>
+</li>
+
+          <li>
+            <Link to="/about" className="hover:underline">About Us</Link>
           </li>
           <li>
-            <a href="#Setting" className="hover:underline">Setting</a>
-          </li>
-          <li>
-            <a href="#box1" className="hover:underline">About Us</a>
-          </li>
-          <li>
-            <a href="#Help" className="hover:underline">Help</a>
+            <Link to="/help" className="hover:underline">Help</Link>
           </li>
         </ul>
       </nav>

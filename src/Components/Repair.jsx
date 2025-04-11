@@ -47,7 +47,7 @@ const services = [
 
 const RepairServices = () => {
   return (
-    <div className="relative w-full min-h-screen font-sans overflow-hidden">
+    <div className="relative w-full min-h-screen font-sans overflow-hidden z-[-1]">
       {/* Background */}
       <div className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-0" style={{ backgroundImage: `url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')` }}></div>
 

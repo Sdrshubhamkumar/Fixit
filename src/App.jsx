@@ -9,6 +9,8 @@ import RequestForm from './Components/RequestForm.jsx'
 import ElectricalRepair from './Components/ElectricRepair.jsx'
 import Footer from './Components/Footer.jsx'
 import Header from './Components/Header.jsx'
+import AboutUs from './Components/AboutUs.jsx'
+import Help from './Components/Help.jsx'
 
 const App = () => {
   return (
@@ -21,6 +23,9 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/electricalrepair" element={<ElectricalRepair />} />
         <Route path="/requestform" element={<RequestForm />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/help" element={<Help/>} />
       </Routes>
       <Footer />
     </Router>

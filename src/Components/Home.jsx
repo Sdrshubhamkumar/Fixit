@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function FixitHomePage() {
     return (
-        <div className="relative  flex flex-col">
+        <div className="relative flex flex-col z-[-1]">
 
             {/* ✅ Background Blur Image Layer */}
             <div
@@ -19,20 +19,7 @@ export default function FixitHomePage() {
 
             {/* Section: About Us & Image Grid */}
             <section id="section1" className="flex flex-wrap justify-between p-4">
-                <div id="box1" className="p-4 rounded-xl shadow-lg">
-                    <h1 className="text-2xl font-bold">About Us</h1>
-                    <p className="mt-2">
-                        Welcome to <b>FIXIT</b>, your trusted partner for reliable and high-quality home services. We are dedicated to making home maintenance and improvement effortless by connecting you with skilled professionals for a wide range of services.
-                    </p>
-                    <h1 className="text-xl font-semibold mt-4">Why Choose Us?</h1>
-                    <ul className="list-disc ml-5 mt-2">
-                        <li>✔ Verified and skilled professionals</li>
-                        <li>✔ Transparent pricing with no hidden costs</li>
-                        <li>✔ Convenient online booking</li>
-                        <li>✔ Customer satisfaction guarantee</li>
-                        <li>✔ Quick and efficient service</li>
-                    </ul>
-                </div>
+                
                 <div id="box2" className="grid gap-2 grid-cols-2 md:grid-cols-3 bg-white/70 rounded-xl shadow-lg p-2">
                     <img src={img1} alt="Fix" className="w-full h-auto" />
                     <img src={img2} alt="Plumbing" className="w-full h-auto" />
