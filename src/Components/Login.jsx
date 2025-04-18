@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase'; // Import the auth object from your Firebase config
+import { auth } from '../firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const LoginRegisterTabs = () => {
   const [activeTab, setActiveTab] = useState('login');
@@ -9,12 +10,15 @@ const LoginRegisterTabs = () => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
+  const navigate = useNavigate();
+
   // Register user using Firebase
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       alert("Registration successful!");
+      setActiveTab('login'); // switch to login tab after registration
     } catch (error) {
       alert(error.message);
     }
@@ -26,6 +30,11 @@ const LoginRegisterTabs = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful as " + loginType);
+      if (loginType === 'Shop') {
+        navigate('/Shop-dashboard');
+      } else {
+        navigate('/');
+      }
     } catch (error) {
       alert("Login failed: " + error.message);
     }

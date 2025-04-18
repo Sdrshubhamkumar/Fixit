@@ -11,6 +11,7 @@ import Footer from './Components/Footer.jsx'
 import Header from './Components/Header.jsx'
 import AboutUs from './Components/AboutUs.jsx'
 import Help from './Components/Help.jsx'
+import ShopDashboard from './Components/ShopDashboard.jsx'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="*" element={<h1>404 Not Found</h1>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/help" element={<Help/>} />
+        <Route path="/shop-dashboard" element={<ShopDashboard />} />
       </Routes>
       <Footer />
     </Router>
