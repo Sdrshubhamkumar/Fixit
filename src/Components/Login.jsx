@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
+import { auth } from '../firebase'; // Import the auth object from your Firebase config
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginRegisterTabs = () => {
   const [activeTab, setActiveTab] = useState('login');
   const [loginType, setLoginType] = useState('Shop');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+
+  // Register user using Firebase
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Registration successful!");
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  // Login user using Firebase
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful as " + loginType);
+    } catch (error) {
+      alert("Login failed: " + error.message);
+    }
+  };
 
   return (
     <div className="relative min-h-screen flex justify-center items-center font-sans overflow-hidden">
@@ -43,41 +70,85 @@ const LoginRegisterTabs = () => {
               </button>
             </div>
 
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="mb-4 text-left">
-                <input type="email" placeholder="Email" className="w-full px-3 py-2 border rounded-md text-sm" />
+                <input 
+                  type="email" 
+                  placeholder="Email" 
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
               </div>
               <div className="mb-4 text-left">
-                <input type="password" placeholder="Password" className="w-full px-3 py-2 border rounded-md text-sm" />
+                <input 
+                  type="password" 
+                  placeholder="Password" 
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
               </div>
               <button type="submit" className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
                 Login as {loginType}
               </button>
             </form>
 
-            <p className="text-sm text-gray-600 mt-4">Don't have an account? <span className="text-green-500 font-semibold cursor-pointer hover:underline" onClick={() => setActiveTab('register')}>Click Register</span></p>
+            <p className="text-sm text-gray-600 mt-4">Don't have an account? 
+              <span 
+                className="text-green-500 font-semibold cursor-pointer hover:underline" 
+                onClick={() => setActiveTab('register')}
+              >
+                Click Register
+              </span>
+            </p>
           </div>
         )}
 
         {/* Register Section */}
         {activeTab === 'register' && (
           <div>
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="mb-4 text-left">
-                <input type="text" placeholder="Name" className="w-full px-3 py-2 border rounded-md text-sm" />
+                <input 
+                  type="text" 
+                  placeholder="Name" 
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                />
               </div>
               <div className="mb-4 text-left">
-                <input type="email" placeholder="Email" className="w-full px-3 py-2 border rounded-md text-sm" />
+                <input 
+                  type="email" 
+                  placeholder="Email" 
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                />
               </div>
               <div className="mb-4 text-left">
-                <input type="password" placeholder="Password" className="w-full px-3 py-2 border rounded-md text-sm" />
+                <input 
+                  type="password" 
+                  placeholder="Password" 
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                />
               </div>
               <button type="submit" className="w-full py-2 bg-green-500 text-white rounded-md hover:bg-green-600">
                 Register
               </button>
             </form>
 
-            <p className="text-sm text-gray-600 mt-4">Already have an account? <span className="text-green-500 font-semibold cursor-pointer hover:underline" onClick={() => setActiveTab('login')}>Click Login</span></p>
+            <p className="text-sm text-gray-600 mt-4">Already have an account? 
+              <span 
+                className="text-green-500 font-semibold cursor-pointer hover:underline" 
+                onClick={() => setActiveTab('login')}
+              >
+                Click Login
+              </span>
+            </p>
           </div>
         )}
       </div>

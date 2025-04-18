@@ -7,7 +7,7 @@ export default function Footer() {
             <h1 className="text-center text-xl font-bold">FIXIT</h1>
             <div className="flex flex-wrap justify-around mt-4">
                 <div>
-                    <h3 className="font-semibold">Company</h3>
+                    <h3 className="font-semibold"></h3>
                     <a href="#" className="block">About Us | Terms & Conditions | Privacy policy | Careers</a>
                 </div>
                 <div>
