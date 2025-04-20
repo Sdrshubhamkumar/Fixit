@@ -1,5 +1,5 @@
 // App.jsx
-import React from 'react'
+import React, { useState } from 'react'
 import Home from './Components/Home.jsx'
 import Repair from './Components/Repair.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -14,22 +14,38 @@ import Help from './Components/Help.jsx'
 import ShopDashboard from './Components/ShopDashboard.jsx'
 
 const App = () => {
+  const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
+
+  const toggleMode =() =>
+    {
+      if(mode === 'light'){
+        setMode('dark');
+        document.body.style.backgroundColor = '#042743';
+      
+      }
+      else{
+        setMode('light');
+        document.body.style.backgroundColor = 'white';
+      
+      }
+    }
+  
   return (
     <Router>
-      <Header />
+      <Header mode={mode} toggleMode={toggleMode} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/repair" element={<Repair />} />
         <Route path="/spasalon" element={<SpaSalon />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login mode={mode}/>} />
         <Route path="/electricalrepair" element={<ElectricalRepair />} />
         <Route path="/requestform" element={<RequestForm />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
-        <Route path="/about" element={<AboutUs/>} />
-        <Route path="/help" element={<Help/>} />
+        <Route path="/about" element={<AboutUs mode={mode}/>} />
+        <Route path="/help" element={<Help mode={mode}/>} />
         <Route path="/shop-dashboard" element={<ShopDashboard />} />
       </Routes>
-      <Footer />
+      <Footer mode={mode}/>
     </Router>
   )
 }
