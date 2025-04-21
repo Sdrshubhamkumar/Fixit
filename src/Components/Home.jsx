@@ -43,7 +43,7 @@ export default function FixitHomePage() {
                         <h3 className="text-xl mt-2">{service.title}</h3>
                         {service.link.startsWith("/") ? (
                             <Link to={service.link} className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">
-                                Book Now
+                                Book Now now
                             </Link>
                         ) : (
                             <a href={service.link} className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">
