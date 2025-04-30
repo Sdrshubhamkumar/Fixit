@@ -3,30 +3,33 @@ import img1 from "../assets/img1.avif";
 import img2 from "../assets/img2.avif";
 import img3 from "../assets/img3.jpg";
 import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img6.avif";
 import Cleaning from "../assets/cleaning.jpg";
 import Repair from "../assets/repair.webp";
 import { Link } from "react-router-dom";
 
+
 export default function FixitHomePage() {
     return (
-        <div className="relative flex flex-col z-[-1]">
+        <div className="relative flex flex-col z-[-1] bg-[url('/public/videos/light_back_video.gif')] bg-no-repeat bg-center bg-cover">
 
             {/* ✅ Background Blur Image Layer */}
             <div
                 className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
-                style={{ backgroundImage: `url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')` }}
+            
             ></div>
 
-            {/* Section: About Us & Image Grid */}
-            <section id="section1" className="flex flex-wrap justify-between p-4">
+            {/* Section: About Us & Image Grid */}  
+            <section id="section1" className="flex flex-wrap justify-between p-4 ">
                 
-                <div id="box2" className="grid gap-2 grid-cols-2 md:grid-cols-3 bg-white/70 rounded-xl shadow-lg p-2">
-                    <img src={img1} alt="Fix" className="w-full h-auto" />
-                    <img src={img2} alt="Plumbing" className="w-full h-auto" />
-                    <img src={img3} alt="Lock Repair" className="w-full h-auto" />
-                    <img src={img4} alt="Cleaning" className="w-full h-auto" />
-                    <img src={img4} alt="Cleaning" className="w-full h-auto" />
-                    <img src={img4} alt="Cleaning" className="w-full h-auto" />
+                <div id="box2" className="w-full h-[60vh] bg-no-repeat bg-center bg-cover z-[-1]"
+                style={{ backgroundImage: "url('/public/videos/service.webp')" }}>
+                   <div><h1 className="transition-transform duration-500 hover:translate-x-4 text-black text-9xl text-center font-serif">
+    CASASWIFT
+</h1>
+                  
+                   </div>
                 </div>
             </section>
 
@@ -43,7 +46,7 @@ export default function FixitHomePage() {
                         <h3 className="text-xl mt-2">{service.title}</h3>
                         {service.link.startsWith("/") ? (
                             <Link to={service.link} className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">
-                                Book Now now
+                                Book Now 
                             </Link>
                         ) : (
                             <a href={service.link} className="mt-2 px-4 py-2 bg-blue-600 text-white rounded">
