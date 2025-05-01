@@ -21,11 +21,13 @@ const App = () => {
       if(mode === 'light'){
         setMode('dark');
         document.body.style.backgroundColor = '#042743';
+        document.body.style.color = '#bcdffb';
       
       }
       else{
         setMode('light');
-        document.body.style.backgroundColor = 'white';
+        document.body.style.backgroundColor = '#bcdffb';
+        document.body.style.color = '#042743';
       
       }
     }

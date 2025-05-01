@@ -12,25 +12,42 @@ import { Link } from "react-router-dom";
 
 export default function FixitHomePage() {
     return (
-        <div className="relative flex flex-col z-[-1] bg-[url('/public/videos/light_back_video.gif')] bg-no-repeat bg-center bg-cover">
+        <div className="relative flex flex-col z-[-1]">
 
             {/* ✅ Background Blur Image Layer */}
             <div
                 className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
             
             ></div>
+             <div
+      className="grid gap-4 p-6"
+      style={{
+        display: "grid",
+        gridTemplateAreas: `
+          "header sidebar sidebar"
+          "footer footer main"
+        `,
+       
+        height: "80vh",
+      }}
+    >
+      <div className="bg-[url('/public/videos/casalogo.gif')] bg-no-repeat bg-cover bg-center text-white p-4" style={{ gridArea: "header" }}>
+
+      </div>
+      <div className="bg-[url('./assets/tools1.jpg')] bg-no-repeat bg-cover bg-center text-white p-4" style={{ gridArea: "sidebar" }}>
+       
+      </div>
+      <div className="bg-[url('/public/videos/service.webp')] bg-no-repeat bg-cover bg-center text-black p-4" style={{ gridArea: "main" }}>
+
+      </div>
+      <div className="bg-[url('./assets/homeservice.jpg')] bg-no-repeat bg-cover bg-center" style={{ gridArea: "footer" }}>
+      </div>
+    </div>
 
             {/* Section: About Us & Image Grid */}  
             <section id="section1" className="flex flex-wrap justify-between p-4 ">
                 
-                <div id="box2" className="w-full h-[60vh] bg-no-repeat bg-center bg-cover z-[-1]"
-                style={{ backgroundImage: "url('/public/videos/service.webp')" }}>
-                   <div><h1 className="transition-transform duration-500 hover:translate-x-4 text-black text-9xl text-center font-serif">
-    CASASWIFT
-</h1>
-                  
-                   </div>
-                </div>
+                
             </section>
 
             {/* Section: Our Services */}
@@ -41,7 +58,7 @@ export default function FixitHomePage() {
                     { img: Repair, title: "Repairing", link: "/repair" },
                     { img: img1, title: "Spa", link: "/spasalon" },
                 ].map((service, index) => (
-                    <div key={index} className="flex flex-col items-center p-4 m-4 bg-blue-200 rounded-lg shadow-lg transition-transform hover:scale-105">
+                    <div key={index} className="flex flex-col items-center p-4 m-4 bg-[url('/public/videos/light_back_video.gif')] rounded-lg shadow-2xl transition-transform hover:scale-105">
                         <img src={service.img} alt={service.title} className="w-72 h-36 object-cover shadow-xl" />
                         <h3 className="text-xl mt-2">{service.title}</h3>
                         {service.link.startsWith("/") ? (
@@ -58,7 +75,7 @@ export default function FixitHomePage() {
             </div>
 
             {/* Section: Other Services */}
-            <h1 className="text-2xl text-center font-bold my-4">OTHER Services</h1>
+            <h1 className="text-2xl text-center font-bold my-4">Other Services</h1>
             <div className="flex flex-wrap justify-around bg-fixed bg-center bg-no-repeat bg-cover p-8" style={{ backgroundImage: `url('/img/room.jpg')` }}>
                 {[
                     { title: "Electricity", link: "form.html" },
@@ -66,7 +83,7 @@ export default function FixitHomePage() {
                     { title: "Car Wash", link: "form.html" },
                     { title: "Others", link: "Repair.html" },
                 ].map((other, index) => (
-                    <div key={index} className="m-4 p-6 bg-yellow-200 border border-gray-700 rounded-lg shadow-lg transition-transform hover:scale-105">
+                    <div key={index} className="m-4 p-6 bg-blue-300 border-gray-950 text-blue-900 rounded-lg shadow-2xl transition-transform hover:scale-105">
                         <h1 className="text-xl font-semibold"><a href={other.link}>{other.title}</a></h1>
                     </div>
                 ))}
