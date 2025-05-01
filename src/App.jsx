@@ -12,6 +12,8 @@ import Header from './Components/Header.jsx'
 import AboutUs from './Components/AboutUs.jsx'
 import Help from './Components/Help.jsx'
 import ShopDashboard from './Components/ShopDashboard.jsx'
+import AddShop from './Components/AddShop.jsx'
+import PrivateRoute from './Components/PrivateRoute.jsx'
 
 const App = () => {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
@@ -43,7 +45,10 @@ const App = () => {
         <Route path="*" element={<h1>404 Not Found</h1>} />
         <Route path="/about" element={<AboutUs mode={mode}/>} />
         <Route path="/help" element={<Help mode={mode}/>} />
-        <Route path="/shop-dashboard" element={<ShopDashboard />} />
+        <Route path="/shop-dashboard" element={<PrivateRoute><ShopDashboard /></PrivateRoute>} />
+        <Route path="/add-shop" element={<PrivateRoute><AddShop /></PrivateRoute>} />
+       
+
       </Routes>
       <Footer mode={mode}/>
     </Router>

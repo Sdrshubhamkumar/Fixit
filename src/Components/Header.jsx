@@ -128,6 +128,12 @@ export default function Header(props) {
           </li>
           <li><Link to="/about" className="hover:underline">About Us</Link></li>
           <li><Link to="/help" className="hover:underline">Help</Link></li>
+         
+          <Link to="/shop-dashboard" className="bg-blue-600 text-white px-4 py-2 rounded">Shop Dashboard</Link>
+          {/* className="bg-blue-600 text-white px-4 py-2 rounded" */}
+        
+          
+       
         </ul>
       </nav>
     </div>
