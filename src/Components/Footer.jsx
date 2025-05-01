@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Footer({ mode }) {
     const isDark = mode === "dark";
@@ -9,7 +10,7 @@ export default function Footer({ mode }) {
             <div className="flex flex-wrap justify-around mt-4">
                 <div className="flex-col">
                     <h3 className="font-semibold">Quick Links</h3>
-                    <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>About Us</a>
+                    <Link to="/about" className="hover:underline">About Us</Link>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Terms & Conditions</a>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Privacy Policy</a>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Careers</a>
@@ -17,7 +18,7 @@ export default function Footer({ mode }) {
                 <div className="flex-col">
                     <h3 className="font-semibold">For Customers</h3>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Blog</a>
-                    <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Reviews</a>
+                    <Link to="/review" className="hover:underline">Reviews</Link>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Contact Us</a>
                 </div>
                 <div>
