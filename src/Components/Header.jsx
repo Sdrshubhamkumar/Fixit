@@ -53,7 +53,7 @@ export default function Header(props) {
     <div className={`${isDark ? "bg-gray-900 text-white" : "bg-blue-100 text-gray-800"} transition-all duration-500 shadow-sm`}>
       {/* Top Header */}
       <header className={`fixed top-0 w-full z-10 px-6 py-3 shadow-md flex items-center justify-between ${isDark ? "bg-gray-800 text-white" : "bg-indigo-200 text-indigo-800"} transition-all duration-500`}>
-        <h1 className="text-xl font-bold">FIXIT</h1>
+        <h1 className="text-xl font-bold">CASASWIFT</h1>
 
         <div className="flex items-center gap-6">
           {user ? (
@@ -93,7 +93,7 @@ export default function Header(props) {
       </header>
 
       {/* Nav and Search */}
-      <nav className={`pt-20 flex flex-col sm:flex-row items-center justify-around px-4 pb-4 ${isDark ? "bg-gray-900 text-white" : ""} transition-all duration-500`}>
+      <nav className={`pt-20 flex flex-col sm:flex-row items-center justify-around px-4 pb-4 ${isDark ? "bg-[url('/public/videos/background_video.gif')] text-white" : ""} transition-all duration-500`}>
         {/* Search Bar */}
         <div className="w-full sm:w-1/2 flex items-center mb-4 sm:mb-0">
           <input

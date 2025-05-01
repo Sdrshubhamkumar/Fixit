@@ -10,6 +10,7 @@ import ElectricalRepair from './Components/ElectricRepair.jsx'
 import Footer from './Components/Footer.jsx'
 import Header from './Components/Header.jsx'
 import AboutUs from './Components/AboutUs.jsx'
+import Review from './Components/Review.jsx';
 import Help from './Components/Help.jsx'
 import ShopDashboard from './Components/ShopDashboard.jsx'
 import AddShop from './Components/AddShop.jsx'
@@ -23,11 +24,13 @@ const App = () => {
       if(mode === 'light'){
         setMode('dark');
         document.body.style.backgroundColor = '#042743';
+        document.body.style.color = '#bcdffb';
       
       }
       else{
         setMode('light');
-        document.body.style.backgroundColor = 'white';
+        document.body.style.backgroundColor = '#acd5f6';
+        document.body.style.color = '#042743';
       
       }
     }
@@ -44,6 +47,7 @@ const App = () => {
         <Route path="/requestform" element={<RequestForm />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
         <Route path="/about" element={<AboutUs mode={mode}/>} />
+        <Route path="/review" element={<Review mode={mode}/>} />
         <Route path="/help" element={<Help mode={mode}/>} />
         <Route path="/shop-dashboard" element={<PrivateRoute><ShopDashboard /></PrivateRoute>} />
         <Route path="/add-shop" element={<PrivateRoute><AddShop /></PrivateRoute>} />
