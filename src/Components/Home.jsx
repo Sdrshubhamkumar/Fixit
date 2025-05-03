@@ -8,17 +8,14 @@ import img6 from "../assets/img6.avif";
 import Cleaning from "../assets/cleaning.jpg";
 import Repair from "../assets/repair.webp";
 import { Link } from "react-router-dom";
+import { FaBolt, FaBug, FaCar, FaAngleDoubleRight, } from 'react-icons/fa'; // example: lightning bolt for Electricity
 
 
 export default function FixitHomePage() {
     return (
-        <div className="relative flex flex-col z-[-1]">
+        <div className="relative flex flex-col">
 
-            {/* ✅ Background Blur Image Layer */}
-            <div
-                className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
-            
-            ></div>
+           
              <div
       className="grid gap-4 p-6"
       style={{
@@ -78,13 +75,14 @@ export default function FixitHomePage() {
             <h1 className="text-2xl text-center font-bold my-4">Other Services</h1>
             <div className="flex flex-wrap justify-around bg-fixed bg-center bg-no-repeat bg-cover p-8" style={{ backgroundImage: `url('/img/room.jpg')` }}>
                 {[
-                    { title: "Electricity", link: "form.html" },
-                    { title: "Pests Control", link: "form.html" },
-                    { title: "Car Wash", link: "form.html" },
-                    { title: "Others", link: "Repair.html" },
+                    { title: "Electricity", link: "form.html", icon: <FaBolt /> },
+                    { title: "Pests Control", link: "form.html", icon: <FaBug />  },
+                    { title: "Car Wash", link: "form.html", icon: <FaCar /> },
+                    { title: "More", link: "Repair.html", icon: <FaAngleDoubleRight /> },
                 ].map((other, index) => (
-                    <div key={index} className="m-4 p-6 bg-blue-300 border-gray-950 text-blue-900 rounded-lg shadow-2xl transition-transform hover:scale-105">
-                        <h1 className="text-xl font-semibold"><a href={other.link}>{other.title}</a></h1>
+                    <div key={index} className="w-60 m-4 p-6 bg-blue-300 border-gray-950 text-blue-900 rounded-lg shadow-2xl transition-transform hover:scale-105">
+                         {other.icon && <div className="text-4xl text-blue-800 mb-2 flex justify-center">{other.icon}</div>}
+                        <h1 className="text-xl font-semibold text-center"><a href={other.link}>{other.title}</a></h1>
                     </div>
                 ))}
             </div>
