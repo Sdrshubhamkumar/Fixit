@@ -15,6 +15,9 @@ import Help from './Components/Help.jsx'
 import ShopDashboard from './Components/ShopDashboard.jsx'
 import AddShop from './Components/AddShop.jsx'
 import PrivateRoute from './Components/PrivateRoute.jsx'
+import SelectShopPage from './Components/SelectShopPage.jsx'
+import BookingForm from './Components/BookingForm.jsx'
+import ShopDetails from './Components/ShopDetails.jsx'
 
 const App = () => {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
@@ -51,6 +54,9 @@ const App = () => {
         <Route path="/help" element={<Help mode={mode}/>} />
         <Route path="/shop-dashboard" element={<PrivateRoute><ShopDashboard /></PrivateRoute>} />
         <Route path="/add-shop" element={<PrivateRoute><AddShop /></PrivateRoute>} />
+        <Route path="/select-shop" element={<SelectShopPage />} />
+        <Route path="/booking/:shopId" element={<BookingForm />} />
+        <Route path="/shop-details/:shopId" element={<ShopDetails />} />
        
 
       </Routes>

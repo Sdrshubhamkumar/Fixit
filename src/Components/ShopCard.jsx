@@ -1,15 +1,37 @@
-const ShopCard = ({ shop }) => (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-      {shop.imageUrl && <img src={shop.imageUrl} alt={shop.shopName} className="h-40 w-full object-cover" />}
-      <div className="p-4 space-y-1">
-        <h3 className="text-xl font-bold">{shop.shopName}</h3>
-        <p className="text-sm text-gray-600">Owner: {shop.ownerName}</p>
-        <p className="text-sm">Type: {shop.shopType}</p>
-        <p className="text-sm">📍 {shop.address}</p>
-        <p className="text-sm">📞 {shop.phone}</p>
-      </div>
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+
+const ShopCard = ({ shop }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/shop-details/${shop.id}`);
+  };
+
+  return (
+    <div
+      onClick={handleCardClick}
+      className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg cursor-pointer transition"
+    >
+      <img
+        src={shop.imageUrl}
+        alt={shop.shopName}
+        className="w-full h-40 object-cover rounded-t-lg"
+      />
+      <h3 className="text-xl font-semibold mt-2">{shop.shopName}</h3>
+      <p className="text-gray-600">{shop.shopType}</p>
+      <p className="text-gray-500">{shop.address}</p>
+
+      {/* Prevent this link from triggering parent div's onClick */}
+      <Link
+        to={`/booking/${shop.id}`}
+        onClick={(e) => e.stopPropagation()}
+        className="mt-4 inline-block text-blue-600 hover:underline"
+      >
+        Book Service
+      </Link>
     </div>
   );
-  
-  export default ShopCard;
-  
+};
+
+export default ShopCard;
