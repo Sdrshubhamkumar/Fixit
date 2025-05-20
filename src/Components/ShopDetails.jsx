@@ -121,7 +121,7 @@ const ShopDetails = () => {
                   onClick={() => handleReject(b)}
                   className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
                 >
-                  Rejected
+                  Reject
                 </button>
               </div>
             )}
