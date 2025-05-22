@@ -5,6 +5,7 @@ import { collection, addDoc } from 'firebase/firestore';
 
 const BookingForm = () => {
   const { shopId } = useParams();
+
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -22,16 +23,22 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!shopId) {
+      alert('Shop ID is missing in URL!');
+      return;
+    }
+
     try {
       console.log('Submitting booking for shopId:', shopId);
-      await addDoc(collection(db, 'shops', shopId, 'bookings'), {
+      const docRef = await addDoc(collection(db, 'shops', shopId, 'bookings'), {
         ...form,
         status: 'Pending',
+        createdAt: new Date(),
       });
 
       alert('Booking submitted successfully!');
 
-      // Reset the form
+      // Reset form
       setForm({
         name: '',
         phone: '',
@@ -42,9 +49,11 @@ const BookingForm = () => {
         serviceType: '',
         details: '',
       });
+
+      console.log('Booking saved with ID:', docRef.id);
     } catch (error) {
-      console.error('Error saving booking:', error);
-      alert('Failed to submit booking.');
+      console.error('Error saving booking:', error.message, error.code);
+      alert('Failed to submit booking: ' + error.message);
     }
   };
 

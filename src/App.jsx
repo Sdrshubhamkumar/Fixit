@@ -18,7 +18,7 @@ import PrivateRoute from './Components/PrivateRoute.jsx'
 import SelectShopPage from './Components/SelectShopPage.jsx'
 import BookingForm from './Components/BookingForm.jsx'
 import ShopDetails from './Components/ShopDetails.jsx'
-
+   
 const App = () => {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
 
