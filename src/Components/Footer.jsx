@@ -12,15 +12,15 @@ export default function Footer({ mode }) {
                 <div className="flex-col text-center">
                     <h3 className="font-semibold">Quick Links</h3>
                     <Link to="/about" className="hover:underline">About Us</Link>
-                    <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Terms & Conditions</a>
-                    <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Privacy Policy</a>
+                    <Link to="terms-and-conditions" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Terms & Conditions</Link>
+                    <Link to="/privacy policy" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Privacy Policy</Link>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Careers</a>
                 </div>
                 <div className="flex-col text-center">
                     <h3 className="font-semibold">For Customers</h3>
                     <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Blog</a>
                     <Link to="/review" className="hover:underline">Reviews</Link>
-                    <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Contact Us</a>
+                    <Link to="/contact" className={`${isDark ? "text-gray-400" : "text-gray-700"} block hover:underline`}>Contact Us</Link>
                 </div>
                 <div>
                     <h3 className="font-semibold">Social Links</h3>

@@ -1,14 +1,16 @@
 import React from "react";
 import img1 from "../assets/img1.avif";
-import img2 from "../assets/img2.avif";
-import img3 from "../assets/img3.jpg";
-import img4 from "../assets/img4.jpg";
-import img5 from "../assets/img5.jpg";
-import img6 from "../assets/img6.avif";
+// import img2 from "../assets/img2.avif";
+// import img3 from "../assets/img3.jpg";
+// import img4 from "../assets/img4.jpg";
+// import img5 from "../assets/img5.jpg";
+// import img6 from "../assets/img6.avif";
 import Cleaning from "../assets/cleaning.jpg";
 import Repair from "../assets/repair.webp";
 import { Link } from "react-router-dom";
-import { FaBolt, FaBug, FaCar, FaAngleDoubleRight, } from 'react-icons/fa'; // example: lightning bolt for Electricity
+import { FaBolt, FaBug, FaCar, FaAngleDoubleRight } from 'react-icons/fa'; // example: lightning bolt for Electricity
+
+
 
 
 export default function FixitHomePage() {
@@ -51,7 +53,7 @@ export default function FixitHomePage() {
             <h1 className="text-2xl text-center font-bold my-4">Our Services</h1>
             <div className="flex flex-wrap justify-around bg-cover bg-fixed" style={{ backgroundImage: `url('/img/backImage.jpg')` }}>
                 {[
-                    { img: Cleaning, title: "Cleaning", link: "clean.html" },
+                    { img: Cleaning, title: "Cleaning", link: "/cleaning" },
                     { img: Repair, title: "Repairing", link: "/repair" },
                     { img: img1, title: "Spa", link: "/spasalon" },
                 ].map((service, index) => (
@@ -75,10 +77,10 @@ export default function FixitHomePage() {
             <h1 className="text-2xl text-center font-bold my-4">Other Services</h1>
             <div className="flex flex-wrap justify-around bg-fixed bg-center bg-no-repeat bg-cover p-8" style={{ backgroundImage: `url('/img/room.jpg')` }}>
                 {[
-                    { title: "Electricity", link: "form.html", icon: <FaBolt /> },
-                    { title: "Pests Control", link: "form.html", icon: <FaBug />  },
-                    { title: "Car Wash", link: "form.html", icon: <FaCar /> },
-                    { title: "More", link: "Repair.html", icon: <FaAngleDoubleRight /> },
+                    { title: "Electricity", link: "electrical-repair", icon: <FaBolt /> },
+                    { title: "Pests Control", link: "Pests Control", icon: <FaBug />  },
+                    { title: "Car Wash", link: "/car-wash-services", icon: <FaCar /> },
+                    { title: "More", link: "/repair", icon: <FaAngleDoubleRight /> },
                 ].map((other, index) => (
                     <div key={index} className="w-60 m-4 p-6 bg-blue-300 border-gray-950 text-blue-900 rounded-lg shadow-2xl transition-transform hover:scale-105">
                          {other.icon && <div className="text-4xl text-blue-800 mb-2 flex justify-center">{other.icon}</div>}
@@ -86,6 +88,11 @@ export default function FixitHomePage() {
                     </div>
                 ))}
             </div>
+          
         </div>
+       
     );
+    
+    
 }
+

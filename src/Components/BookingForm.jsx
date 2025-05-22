@@ -59,8 +59,17 @@ const BookingForm = () => {
 
   return (
     <div className="p-6 max-w-xl mx-auto">
+     
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
+        style={{
+          backgroundImage:
+            "url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')",
+        }}
+      ></div>
       <h2 className="text-3xl font-bold mb-4">Book Your Service</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4 bg-white p-8 rounded-lg shadow-lg">
         {['name', 'phone', 'email', 'address', 'serviceType', 'details'].map(
           (field) => (
             <input
