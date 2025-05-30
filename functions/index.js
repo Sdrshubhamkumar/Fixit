@@ -20,8 +20,7 @@ app.use(express.json());
 app.post('/sendEmail', async (req, res) => {
   const { email, name, serviceType, serviceDate, status, serviceTime } = req.body;
 
-  // const user = 'projectsdemo12@gmail.com';
-  // const pass = 'wyysbchvuevmsdrl';
+ 
 
   const user = 'subbhamk@gmail.com';
   const pass = 'xjhsluvswztqhtta';

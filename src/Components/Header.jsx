@@ -100,7 +100,7 @@ export default function Header(props) {
             className={`px-4 h-10 rounded-full w-full border ${isDark ? "bg-gray-700 border-gray-500 text-white placeholder-gray-300" : "bg-white border-blue-400 text-gray-800"} focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-500`}
             id="searchBar"
             type="search"
-            placeholder="Search Your Destination !!"
+            placeholder="Search Your Services !!"
           />
           <button onClick={searchDestination} className="ml-2">
             <img
@@ -118,10 +118,10 @@ export default function Header(props) {
             <span className="hover:underline cursor-pointer">Services</span>
             <div className={`absolute left-0 mt-2 w-48 ${isDark ? "bg-gray-700 text-white" : "bg-white text-black"} shadow-lg rounded-md z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500`}>
               <ul className="py-2 text-sm">
-                <li><Link to="/services/electric" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Electric Service</Link></li>
-                <li><Link to="/repair" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Electrical Services</Link></li>
-                <li><Link to="/services/plumber" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Plumber Services</Link></li>
-                <li><Link to="/services/furniture" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Furniture Services</Link></li>
+                <li><Link to="/Electricity-service" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Electric Service</Link></li>
+                <li><Link to="/electricalrepair" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Electrical Services</Link></li>
+                <li><Link to="/Plumber-service" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Plumber Services</Link></li>
+                <li><Link to="furniture-service" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Furniture Services</Link></li>
                 <li><Link to="/spasalon" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600">Spa & Salon</Link></li>
               </ul>
             </div>

@@ -16,13 +16,13 @@ export default function ContactUs() {
           <div className="flex flex-col items-center">
             <FaPhone className="text-blue-600 text-3xl mb-2" />
             <h2 className="font-semibold text-lg mb-1">Phone</h2>
-            <p className="text-gray-600">+91 9876543210</p>
+            <p className="text-gray-600">+91 8207397299</p>
           </div>
 
           <div className="flex flex-col items-center">
             <FaEnvelope className="text-blue-600 text-3xl mb-2" />
             <h2 className="font-semibold text-lg mb-1">Email</h2>
-            <p className="text-gray-600">support@homeservices.com</p>
+            <p className="text-gray-600">shubhamkumar29801@gmail.com</p>
           </div>
 
           <div className="flex flex-col items-center">
@@ -35,7 +35,7 @@ export default function ContactUs() {
         <div className="text-center mt-12">
           <h3 className="text-lg font-semibold mb-2">Working Hours</h3>
           <p className="text-gray-600">Monday - Saturday: 9:00 AM – 8:00 PM</p>
-          <p className="text-gray-600">Sunday: Closed</p>
+          <p className="text-gray-600">All Days Open</p>
         </div>
       </div>
     </div>

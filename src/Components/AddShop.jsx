@@ -52,7 +52,16 @@ const AddShop = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-8 bg-white shadow-lg p-6 rounded-xl space-y-4">
+
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-8 bg-gray-100 shadow-lg p-6 rounded-xl space-y-4">
+     {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
+        style={{
+          backgroundImage:
+            "url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')",
+        }}
+      ></div>
       <h2 className="text-2xl font-bold text-center">Add Your Shop</h2>
       <input name="shopName" value={form.shopName} onChange={handleChange} placeholder="Shop Name" className="w-full border p-2 rounded" required />
       <input name="ownerName" value={form.ownerName} onChange={handleChange} placeholder="Owner's Name" className="w-full border p-2 rounded" required />

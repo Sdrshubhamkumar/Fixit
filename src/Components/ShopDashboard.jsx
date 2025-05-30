@@ -18,7 +18,15 @@ const ShopDashboard = () => {
   }, []);
 
   return (
-    <div className="p-4 bg-gray-100 min-h-screen">
+    <div className="p-4 min-h-screen">
+     {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
+        style={{
+          backgroundImage:
+            "url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')",
+        }}
+      ></div>
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">Shop Dashboard</h1>
         <button

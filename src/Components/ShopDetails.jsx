@@ -104,6 +104,14 @@ const emailApiUrl = `${import.meta.env.VITE_API_URL || 'https://us-central1-fixi
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
+     {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm brightness-90 z-[-1]"
+        style={{
+          backgroundImage:
+            "url('https://homecareanandfacilities.com/wp-content/uploads/2019/12/home-deep-cleaning-870x500.jpg')",
+        }}
+      ></div>
       {shop ? (
         <div className="mb-6 bg-white shadow p-4 rounded">
           <img

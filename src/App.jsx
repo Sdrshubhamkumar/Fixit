@@ -1,5 +1,7 @@
 // App.jsx
-import React, { useState } from 'react'
+// import React, { useState, lazy, Suspense } from 'react';
+
+import React, { useState, lazy, Suspense } from 'react'
 import Home from './Components/Home.jsx'
 import Repair from './Components/Repair.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -24,6 +26,13 @@ import ElectricRepair from './Components/ElectricRepair.jsx'
 import PestsControl from './Components/PestsControl.jsx'
 import PrivacyPolicy from './Components/PrivacyPolicy.jsx'
 import TermsAndConditions from './Components/TermsAndConditions.jsx'
+import ElectricityService from './Components/ElectricityService.jsx'
+import PlumbingServices from './Components/PlumbingServices.jsx'
+import FurnitureServices from './Components/FurnitureServices.jsx'
+
+// Lazy load chatbot for performance
+const Chatbot = lazy(() => import('./Components/Chatbot'));
+
    
 const App = () => {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not
@@ -69,7 +78,16 @@ const App = () => {
         <Route path= "Pests Control" element={<PestsControl mode={mode} />} />
         <Route path= "Privacy Policy" element={<PrivacyPolicy mode={mode} />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions mode={mode}/>} />
+        <Route path ="Electricity-service" element={<ElectricityService mode={mode} />} />
+        <Route path="Plumber-service" element={<PlumbingServices />} />
+        <Route path="furniture-service" element={<FurnitureServices />} />
       </Routes>
+
+         {/* Optimized Chatbot */}
+      <Suspense fallback={<div>Loading chatbot...</div>}>
+        <Chatbot />
+      </Suspense>
+
       <Footer mode={mode}/>
     </Router>
   )

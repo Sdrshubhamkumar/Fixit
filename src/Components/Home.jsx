@@ -5,6 +5,7 @@ import img1 from "../assets/img1.avif";
 // import img4 from "../assets/img4.jpg";
 // import img5 from "../assets/img5.jpg";
 // import img6 from "../assets/img6.avif";
+import HomeCarousel from './HomeCarousel';
 import Cleaning from "../assets/cleaning.jpg";
 import Repair from "../assets/repair.webp";
 import { Link } from "react-router-dom";
@@ -50,7 +51,7 @@ export default function FixitHomePage() {
             </section>
 
             {/* Section: Our Services */}
-            <h1 className="text-2xl text-center font-bold my-4">Our Services</h1>
+            <h1 className="text-4xl text-center font-bold my-4">Our Services</h1>
             <div className="flex flex-wrap justify-around bg-cover bg-fixed" style={{ backgroundImage: `url('/img/backImage.jpg')` }}>
                 {[
                     { img: Cleaning, title: "Cleaning", link: "/cleaning" },
@@ -72,12 +73,15 @@ export default function FixitHomePage() {
                     </div>
                 ))}
             </div>
+            {/* Section: Home Carousel */}
+            <h1 className="text-4xl text-center font-bold my-4 mt-20">Spa&Salon Services</h1>
+                <HomeCarousel />
 
             {/* Section: Other Services */}
-            <h1 className="text-2xl text-center font-bold my-4">Other Services</h1>
+            <h1 className="text-4xl text-center font-bold my-4">Other Services</h1>
             <div className="flex flex-wrap justify-around bg-fixed bg-center bg-no-repeat bg-cover p-8" style={{ backgroundImage: `url('/img/room.jpg')` }}>
                 {[
-                    { title: "Electricity", link: "electrical-repair", icon: <FaBolt /> },
+                    { title: "Electricity", link: "Electricity-service", icon: <FaBolt /> },
                     { title: "Pests Control", link: "Pests Control", icon: <FaBug />  },
                     { title: "Car Wash", link: "/car-wash-services", icon: <FaCar /> },
                     { title: "More", link: "/repair", icon: <FaAngleDoubleRight /> },

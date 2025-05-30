@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,} from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"; // Importing Facebook icon from react-icons
 
 export default function Footer({ mode }) {
@@ -40,9 +40,11 @@ export default function Footer({ mode }) {
                         <a href="#" className={`${isDark ? "text-gray-400" : "text-gray-700"} hover:text-blue-600`}>
                         <FaGithub className="hover:text-black" />
                         </a>
-                       
                     </div>
                 </div>
+            </div>
+            <div className="text-center mt-4">
+                Copyright © 2025 CasaSwift. All rights reserved.
             </div>
         </footer>
     );
